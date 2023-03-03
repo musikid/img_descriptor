@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "img_descriptor"
+version = "23.3.3"
+description = "Get information about S3 images."
+authors = ["Sayafdine Said <musikid@outlook.com>"]
+license = "BSD"
+readme = "README.md"
+packages = [{ include = "img_descriptor" }]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+boto3 = "^1.26.83"
+typer = { extras = ["all"], version = "^0.7.0" }
+rich = "^12.6.0"
+
+[tool.poetry.scripts]
+img_descriptor = "img_descriptor.main:app"
+
+[tool.poetry.group.dev.dependencies]
+boto3-stubs = { extras = ["boto3", "rekognition", "s3"], version = "^1.26.83" }
+black = { version = "^23.1.0", allow-prereleases = true }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
